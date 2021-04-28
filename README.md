@@ -34,7 +34,7 @@
 <p>Você pode ler a documentação e testar a api acessando o swagger do projeto no meu heroku clicando <a href="">aqui</a></p>
 <p>Caso você queira usar o Postman para testar o projeto basta usar a url: </p>
 -->
-<p>:warning:O projeto ainda <b>não está concluído/b<>, em breve estará pronto e você poderá testalo e consultar a documentação:warning:</p>
+<p>:warning:O projeto ainda <b>NÃO ESTÁ CONCLUÍDO</b>, em breve estará pronto e você poderá testalo e consultar a documentação:warning:</p>
 
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
 
