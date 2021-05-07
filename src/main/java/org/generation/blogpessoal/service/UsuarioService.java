@@ -32,7 +32,7 @@ public class UsuarioService {
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 		// dar uma olhada no repository do usuario no método especial
-		Optional<Usuario> usuario = repository.findByNome(user.get().getNome());		
+		Optional<Usuario> usuario = repository.findByUsuario(user.get().getUsuario());		
 		
 		if(usuario.isPresent()) {
 			if(encoder.matches(user.get().getSenha(), usuario.get().getSenha())) {
