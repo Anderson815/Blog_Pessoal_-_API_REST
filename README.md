@@ -22,12 +22,28 @@
 
 <h2 id="Funcionalidades">⚙️ Funcionalidades</h2>
 
+<h3>Usuário</h3>
+
+  - [x] Cadastrar usuário
+  - [x] Logar
+
+<h3>Postagem:</h3>
+
   - [x] Postar
   - [x] Consultar todas as postagens
   - [x] Consultar postagens com base no título
   - [x] Consultar postagem específica através de um ID
   - [x] Alterar postagem
   - [x] Deletar postagem
+
+<h3>Tema</h3>
+
+  - [x] Criar tema
+  - [x] Consultar todas os temas
+  - [x] Consultar tema por nome parecido
+  - [x] Consultar tema através de um ID
+  - [x] Alterar cadastro de tema
+  - [x] Deletar cadastro de tema
 
 <h2 id="Executar">🚀 Como executar o projeto</h2>
 <!--
