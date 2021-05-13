@@ -13,7 +13,7 @@
 
 <h2 id="Sobre">:computer: Sobre o projeto</h2>
 <p>
-  Blog Pessoal - API REST: Este é um projto back-end voltado para um blog pessoal, com ele você pode desabafar problemas, registrar uma bela conquista e gurardar todos os momentos que você quiser da sua vida em formato de texto.
+  Blog Pessoal - API REST: Este é um projto back-end voltado para um blog pessoal, com ele você pode desabafar problemas, registrar uma bela conquista e guardar todos os momentos que você quiser da sua vida em formato de texto.
 </p>
 
 <p>
