@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/tema")
@@ -34,6 +36,10 @@ public class TemaController {
 	}
 	
 	@ApiOperation(value = "Busca um tema específico através de um ID")
+    @ApiResponses(value = {
+            @ApiResponse(code = 404, message = "O ID não existe"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
 	@GetMapping("/{id}")
 	public ResponseEntity<Tema> getById(@PathVariable(value = "id") long id){
 		return repository.findById(id)
@@ -42,24 +48,31 @@ public class TemaController {
 	}
 	
 	@ApiOperation(value = "Busca todos os temas através da parte semelhante do nome")
+	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Tema>> getAllByNome(@PathVariable(value = "nome") String nome){
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
 	
 	@ApiOperation(value = "Faz um tema")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Tema feito"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
 	@PostMapping
 	public ResponseEntity<Tema> post(@RequestBody Tema tema){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 	
 	@ApiOperation(value = "Altera um tema (deve ser informado o ID no body)")
+	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
 	@PutMapping
 	public ResponseEntity<Tema> put(@RequestBody Tema tema){
 		return ResponseEntity.ok(repository.save(tema));
 	}
 	
 	@ApiOperation(value = "Deleta um tema através de um ID. OBS: Todas as postagens referentes ao tema serão deletadas também")
+	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable(value = "id") long id) {
 		repository.deleteById(id);
