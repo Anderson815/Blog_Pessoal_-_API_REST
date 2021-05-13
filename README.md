@@ -1,7 +1,7 @@
 <img src="Midias_Readme/Banner.png" alt="Banner do projeto">
 
 <h1 align="center">Blog Pessoal - API REST</h1>
-<p align="center">Em desenvolvimento 🛠 </p>
+<p align="center">Concluído 🚀</p>
 <p align="center">
   <a href="#Sobre">Sobre</a> •
   <a href="#Funcionalidades">Funcionalidades</a> •
