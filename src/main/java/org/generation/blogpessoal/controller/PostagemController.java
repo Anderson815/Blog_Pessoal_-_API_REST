@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/postagens")
@@ -34,6 +36,10 @@ public class PostagemController {
 	}
 	
 	@ApiOperation(value = "Busca uma postagem específica através de um ID")
+    @ApiResponses(value = {
+            @ApiResponse(code = 404, message = "O ID não existe"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
 	@GetMapping("/{id}")
 	public ResponseEntity<Postagem> getById(@PathVariable(value = "id") long id){
 		return repository.findById(id)
@@ -43,6 +49,7 @@ public class PostagemController {
 	}
 	
 	@ApiOperation(value = "Busca todas as postagens através da parte semelhantes do título")
+	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
 	@GetMapping("/titulo/{titulo}")
 	public ResponseEntity<List<Postagem>> getAllByTitulo(@PathVariable(value = "titulo") String titulo){
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
@@ -51,6 +58,11 @@ public class PostagemController {
 	//Criação
 	
 	@ApiOperation(value = "Faz uma postagem")
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Postagem feita"),
+            @ApiResponse(code = 400, message = "Alguma informação inválida para a postagem"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
 	@PostMapping
 	public ResponseEntity<Postagem> post(@RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
@@ -59,6 +71,11 @@ public class PostagemController {
 	//Alteração
 	
 	@ApiOperation(value = "Altera uma postagem (deve ser informado o ID no body)")
+    @ApiResponses(value = {
+            @ApiResponse(code = 400, message = "Alguma informação inválida para a postagem"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição"),
+            @ApiResponse(code = 404, message = "O ID não existe")
+        })
 	@PutMapping
 	public ResponseEntity<Postagem> put(@RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
@@ -67,6 +84,10 @@ public class PostagemController {
 	//Deleção
 	
 	@ApiOperation(value = "Deleta uma postagem através de um ID")
+    @ApiResponses(value = {
+            @ApiResponse(code = 404, message = "o ID não existe"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
 	@DeleteMapping("/{id}")
 	public void deletePostagem(@PathVariable(value = "id") long id){
 		repository.deleteById(id);
