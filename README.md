@@ -13,11 +13,11 @@
 
 <h2 id="Sobre">:computer: Sobre o projeto</h2>
 <p>
-  Blog Pessoal - API REST: Este é um projto back-end voltado para um blog pessoal, com ele você pode desabafar problemas, registrar uma bela conquista e gurardar todos os momentos que você quiser da sua vida em formato de texto.
+  Blog Pessoal - API REST: Este é um projeto back-end voltado para um blog pessoal, com ele você pode desabafar problemas, registrar uma bela conquista e guardar todos os momentos que você quiser da sua vida em formato de texto.
 </p>
 
 <p>
-  Esse projeto foi desenvolvido principalmente para que o Autor pudesse praticar as tecnologias de backend e assim explorar cada vez mais esse mundo da programação.
+  Esse projeto foi um exercício da <a href="https://brazil.generation.org/">Generation Brasil</a> para que os alunos pudessem praticar os conhecimentos das tecnologias de back-end, ensinados no módulo 2 do curso.
 </p>
 
 <h2 id="Funcionalidades">⚙️ Funcionalidades</h2>
