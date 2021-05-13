@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  Esse projeto foi desenvolvido principalmente para que o Autor pudesse praticar as tecnologias de backend e assim explorar cada vez mais esse mundo da programação.
+  Esse projeto foi um exercício da <a href="https://brazil.generation.org/">Generation Brasil</a> para que os alunos pudessem praticar os conhecimentos das tecnologias de back-end, ensinados no módulo 2 do curso.
 </p>
 
 <h2 id="Funcionalidades">⚙️ Funcionalidades</h2>
