@@ -45,6 +45,18 @@
   - [x] Alterar cadastro de tema
   - [x] Deletar cadastro de tema
 
+<p>Endpoints para as funcionalidades: </p>
+<img src="Midias_Readme/telas/endpoints.png">
+
+<p>Cadastrar um novo usuário: </p>
+<img src="Midias_Readme/telas/cadastrar_usuario.png">
+
+<p>Fazer uma postagem: </p>
+<img src="Midias_Readme/telas/publicar_postagem.png">
+
+<p>Consultar todas as postagens: </p>
+<img src="Midias_Readme/telas/consultar-todos_postagem.png">
+
 <h2 id="Executar">🚀 Como executar o projeto</h2>
 <p>Você pode ler a documentação e testar a api acessando o swagger do projeto no meu heroku clicando <a href="https://blogpessoalanderson.herokuapp.com/swagger-ui.html#/">aqui</a>. Caso a aplicação pedir para logar, use:</p>
 <ul>
