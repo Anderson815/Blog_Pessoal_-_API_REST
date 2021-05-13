@@ -58,11 +58,13 @@
 <a href="https://start.spring.io/"><img src="Midias_Readme/ferramentas/Spring Boot.png" alt="Spring" title="Spring" height="62px" width="62px"></a>
 <a href="https://maven.apache.org/"><img src="Midias_Readme/ferramentas/Maven.png" alt="Maven" title="Maven" height="62px" width="62px"></a>
 <a href="https://www.mysql.com/"><img src="Midias_Readme/ferramentas/MySQL.png" alt="MySQL" title="MySQL" height="62px" width="62px"></a>
+<a href="https://www.postgresql.org/"><img src="Midias_Readme/ferramentas/PostgreSQL.png" alt="PostgreSQL" title="PostgreSQL" height="62px" width="62px"></a>
 
 <p>Utilitários:</p>
 <a href="https://git-scm.com/"><img src="Midias_Readme/ferramentas/Git.png" alt="Git" title="Git" height="62px" width="62px"></a>
 <a href="https://github.com/"><img src="Midias_Readme/ferramentas/GitHub.png" alt="GitHub" title="GitHub" height="62px" width="62px"></a>
 <a href="https://www.postman.com/"><img src="Midias_Readme/ferramentas/Postman.png" alt="Postman" title="Postman" height="62px" width="62px"></a>
+<a href="https://dashboard.heroku.com/"><img src="Midias_Readme/ferramentas/Heroku.png" alt="Heroku" title="Heroku" height="62px" width="62px"></a>
 
 
 <h2 id="Autor">🦸 Autor</h2>
