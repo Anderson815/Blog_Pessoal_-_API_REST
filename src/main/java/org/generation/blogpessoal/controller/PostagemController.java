@@ -30,7 +30,7 @@ public class PostagemController {
 	public PostagemRepository repository;
 
 	@ApiOperation(value = "Busca todas as postagens")
-	@GetMapping
+	@GetMapping(produces = "application/json")
 	public ResponseEntity<List<Postagem>> getAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
@@ -40,7 +40,7 @@ public class PostagemController {
             @ApiResponse(code = 404, message = "O ID não existe"),
             @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
         })
-	@GetMapping("/{id}")
+	@GetMapping(value = "/{id}", produces = "application/json")
 	public ResponseEntity<Postagem> getById(@PathVariable(value = "id") long id){
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
@@ -50,7 +50,7 @@ public class PostagemController {
 	
 	@ApiOperation(value = "Busca todas as postagens através da parte semelhantes do título")
 	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
-	@GetMapping("/titulo/{titulo}")
+	@GetMapping(value = "/titulo/{titulo}", produces = "application/json")
 	public ResponseEntity<List<Postagem>> getAllByTitulo(@PathVariable(value = "titulo") String titulo){
 		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
@@ -63,7 +63,7 @@ public class PostagemController {
             @ApiResponse(code = 400, message = "Alguma informação inválida para a postagem"),
             @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
         })
-	@PostMapping
+	@PostMapping(produces = "application/json")
 	public ResponseEntity<Postagem> post(@RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(postagem));
 	}
@@ -76,7 +76,7 @@ public class PostagemController {
             @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição"),
             @ApiResponse(code = 404, message = "O ID não existe")
         })
-	@PutMapping
+	@PutMapping(produces = "application/json")
 	public ResponseEntity<Postagem> put(@RequestBody Postagem postagem){
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(postagem));
 	}
@@ -88,7 +88,7 @@ public class PostagemController {
             @ApiResponse(code = 404, message = "o ID não existe"),
             @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
         })
-	@DeleteMapping("/{id}")
+	@DeleteMapping(value = "/{id}", produces = "application/json")
 	public void deletePostagem(@PathVariable(value = "id") long id){
 		repository.deleteById(id);
 	}
