@@ -30,7 +30,7 @@ public class TemaController {
 	private TemaRepository repository;
 	
 	@ApiOperation(value = "Busca todos os temas")
-	@GetMapping
+	@GetMapping(produces = "application/json")
 	public ResponseEntity<List<Tema>> getAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
@@ -40,7 +40,7 @@ public class TemaController {
             @ApiResponse(code = 404, message = "O ID não existe"),
             @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
         })
-	@GetMapping("/{id}")
+	@GetMapping(value = "/{id}", produces = "application/json")
 	public ResponseEntity<Tema> getById(@PathVariable(value = "id") long id){
 		return repository.findById(id)
 				.map(resp -> ResponseEntity.ok(resp))
@@ -48,8 +48,11 @@ public class TemaController {
 	}
 	
 	@ApiOperation(value = "Busca todos os temas através da parte semelhante do nome")
-	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
-	@GetMapping("/nome/{nome}")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
+	@GetMapping(value= "/nome/{nome}", produces = "application/json")
 	public ResponseEntity<List<Tema>> getAllByNome(@PathVariable(value = "nome") String nome){
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
@@ -59,21 +62,27 @@ public class TemaController {
             @ApiResponse(code = 201, message = "Tema feito"),
             @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
         })
-	@PostMapping
+	@PostMapping(produces = "application/json")
 	public ResponseEntity<Tema> post(@RequestBody Tema tema){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 	
 	@ApiOperation(value = "Altera um tema (deve ser informado o ID no body)")
-	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
-	@PutMapping
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "O tema foi deletado"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
+	@PutMapping(produces = "application/json")
 	public ResponseEntity<Tema> put(@RequestBody Tema tema){
 		return ResponseEntity.ok(repository.save(tema));
 	}
 	
 	@ApiOperation(value = "Deleta um tema através de um ID. OBS: Todas as postagens referentes ao tema serão deletadas também")
-	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
-	@DeleteMapping("/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "O tema foi deletado"),
+            @ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
+        })
+	@DeleteMapping(value = "/{id}", produces = "application/json")
 	public void delete(@PathVariable(value = "id") long id) {
 		repository.deleteById(id);
 	}
