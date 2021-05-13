@@ -46,11 +46,19 @@
   - [x] Deletar cadastro de tema
 
 <h2 id="Executar">🚀 Como executar o projeto</h2>
-<!--
-<p>Você pode ler a documentação e testar a api acessando o swagger do projeto no meu heroku clicando <a href="">aqui</a></p>
-<p>Caso você queira usar o Postman para testar o projeto basta usar a url: </p>
--->
-<p>:warning:O projeto ainda <b>NÃO ESTÁ CONCLUÍDO</b>, em breve estará pronto e você poderá testa-lo e consultar a documentação:warning:</p>
+<p>Você pode ler a documentação e testar a api acessando o swagger do projeto no meu heroku clicando <a href="https://blogpessoalanderson.herokuapp.com/swagger-ui.html#/">aqui</a>. Caso a aplicação pedir para logar, use:</p>
+<ul>
+  <li>Usuário: Anderson LOL</li>
+  <li>Senha: 987654321</li>
+</ul>
+<br/>
+<p>Caso você queira usar o Postman para testar o projeto basta usar a url: https://blogpessoalanderson.herokuapp.com. Como a aplicação tem uma camada de segurança você terá que seguir os seguintes passos para ter acesso total aos endpoints:</p>
+<ol>
+  <li>Usar o endpoint de cadastro de usuário (/usuarios/cadastrar) para criar um usuário</li>
+  <li>Usar o endpoint de logar (/usuarios/logar) para gerar  token</li>
+  <li>Utilize o token, gerado na etapa anterior, no cabeçalho das requisições dos demais endpoints que estão bloqueados. Basta ir em Headers e criar um atributo chamado Authorization e passar o valor do token nele</li>
+</ol>
+
 
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
 
@@ -58,11 +66,13 @@
 <a href="https://start.spring.io/"><img src="Midias_Readme/ferramentas/Spring Boot.png" alt="Spring" title="Spring" height="62px" width="62px"></a>
 <a href="https://maven.apache.org/"><img src="Midias_Readme/ferramentas/Maven.png" alt="Maven" title="Maven" height="62px" width="62px"></a>
 <a href="https://www.mysql.com/"><img src="Midias_Readme/ferramentas/MySQL.png" alt="MySQL" title="MySQL" height="62px" width="62px"></a>
+<a href="https://www.postgresql.org/"><img src="Midias_Readme/ferramentas/PostgreSQL.png" alt="PostgreSQL" title="PostgreSQL" height="62px" width="62px"></a>
 
 <p>Utilitários:</p>
 <a href="https://git-scm.com/"><img src="Midias_Readme/ferramentas/Git.png" alt="Git" title="Git" height="62px" width="62px"></a>
 <a href="https://github.com/"><img src="Midias_Readme/ferramentas/GitHub.png" alt="GitHub" title="GitHub" height="62px" width="62px"></a>
 <a href="https://www.postman.com/"><img src="Midias_Readme/ferramentas/Postman.png" alt="Postman" title="Postman" height="62px" width="62px"></a>
+<a href="https://dashboard.heroku.com/"><img src="Midias_Readme/ferramentas/Heroku.png" alt="Heroku" title="Heroku" height="62px" width="62px"></a>
 
 
 <h2 id="Autor">🦸 Autor</h2>
