@@ -47,12 +47,18 @@
 
 <h2 id="Executar">🚀 Como executar o projeto</h2>
 <p>Você pode ler a documentação e testar a api acessando o swagger do projeto no meu heroku clicando <a href="https://blogpessoalanderson.herokuapp.com/swagger-ui.html#/">aqui</a>. Caso a aplicação pedir para logar, use:</p>
-<ol>
+<ul>
   <li>Usuário: Anderson LOL</li>
   <li>Senha: 987654321</li>
-</ol>
+</ul>
 <br/>
-<p>Caso você queira usar o Postman para testar o projeto basta usar a url: https://blogpessoalanderson.herokuapp.com</p>
+<p>Caso você queira usar o Postman para testar o projeto basta usar a url: https://blogpessoalanderson.herokuapp.com. Como a aplicação tem uma camada de segurança você terá que seguir os seguintes passos para ter acesso total aos endpoints:</p>
+<ol>
+  <li>Usar o endpoint de cadastro de usuário (/usuarios/cadastrar) para criar um usuário</li>
+  <li>Usar o endpoint de logar (/usuarios/logar) para gerar  token</li>
+  <li>Utilize o token, gerado na etapa anterior, no cabeçalho das requisições dos demais endpoints que estão bloqueados. Basta ir em Headers e criar um atributo chamado Authorization e passar o valor do token nele</li>
+</ol>
+
 
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
 
