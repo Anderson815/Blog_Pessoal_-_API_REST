@@ -46,7 +46,12 @@
   - [x] Deletar cadastro de tema
 
 <h2 id="Executar">🚀 Como executar o projeto</h2>
-<p>Você pode ler a documentação e testar a api acessando o swagger do projeto no meu heroku clicando <a href="https://blogpessoalanderson.herokuapp.com/swagger-ui.html#/">aqui</a></p>
+<p>Você pode ler a documentação e testar a api acessando o swagger do projeto no meu heroku clicando <a href="https://blogpessoalanderson.herokuapp.com/swagger-ui.html#/">aqui</a>. Caso a aplicação pedir para logar, use:</p>
+<ol>
+  <li>Usuário: Anderson LOL</li>
+  <li>Senha: 987654321</li>
+</ol>
+<br/>
 <p>Caso você queira usar o Postman para testar o projeto basta usar a url: https://blogpessoalanderson.herokuapp.com</p>
 
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
