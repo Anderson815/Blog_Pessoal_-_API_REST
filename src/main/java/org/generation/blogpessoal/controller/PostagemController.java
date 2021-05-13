@@ -48,7 +48,7 @@ public class PostagemController {
 				.build());
 	}
 	
-	@ApiOperation(value = "Busca todas as postagens através da parte semelhantes do título")
+	@ApiOperation(value = "Busca todas as postagens através da parte semelhante do título")
 	@ApiResponse(code = 401, message = "Você precisa de token para fazer essa requisição")
 	@GetMapping(value = "/titulo/{titulo}", produces = "application/json")
 	public ResponseEntity<List<Postagem>> getAllByTitulo(@PathVariable(value = "titulo") String titulo){

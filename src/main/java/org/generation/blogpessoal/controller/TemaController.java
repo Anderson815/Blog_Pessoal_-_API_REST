@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/tema")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
@@ -25,11 +27,13 @@ public class TemaController {
 	@Autowired
 	private TemaRepository repository;
 	
+	@ApiOperation(value = "Busca todos os temas")
 	@GetMapping
 	public ResponseEntity<List<Tema>> getAll(){
 		return ResponseEntity.ok(repository.findAll());
 	}
 	
+	@ApiOperation(value = "Busca um tema específico através de um ID")
 	@GetMapping("/{id}")
 	public ResponseEntity<Tema> getById(@PathVariable(value = "id") long id){
 		return repository.findById(id)
@@ -37,21 +41,25 @@ public class TemaController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 	
+	@ApiOperation(value = "Busca todos os temas através da parte semelhante do nome")
 	@GetMapping("/nome/{nome}")
 	public ResponseEntity<List<Tema>> getAllByNome(@PathVariable(value = "nome") String nome){
 		return ResponseEntity.ok(repository.findAllByDescricaoContainingIgnoreCase(nome));
 	}
 	
+	@ApiOperation(value = "Faz um tema")
 	@PostMapping
 	public ResponseEntity<Tema> post(@RequestBody Tema tema){
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(tema));
 	}
 	
+	@ApiOperation(value = "Altera um tema (deve ser informado o ID no body)")
 	@PutMapping
 	public ResponseEntity<Tema> put(@RequestBody Tema tema){
 		return ResponseEntity.ok(repository.save(tema));
 	}
 	
+	@ApiOperation(value = "Deleta um tema através de um ID. OBS: Todas as postagens referentes ao tema serão deletadas também")
 	@DeleteMapping("/{id}")
 	public void delete(@PathVariable(value = "id") long id) {
 		repository.deleteById(id);
