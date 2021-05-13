@@ -31,7 +31,7 @@ public class UsuarioController {
             @ApiResponse(code = 201, message = "O usuário foi cadastrado"),
             @ApiResponse(code = 400, message = "Esse usuário já existe na plataforma")
         })
-	@PostMapping("/cadastrar")
+	@PostMapping(value = "/cadastrar", produces = "application/json")
 	public ResponseEntity<Usuario> post(@RequestBody Usuario usuario){
 		Optional<Usuario> user = usuarioService.cadastrarUsuario(usuario);
 		
@@ -47,7 +47,7 @@ public class UsuarioController {
             @ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 401, message = "Esse usuário não existe na plataformaa")
         })
-	@PostMapping("/logar")
+	@PostMapping(value = "/logar", produces = "application/json")
 	public ResponseEntity<UserLogin> autentication(@RequestBody Optional<UserLogin> user){
 		return usuarioService.logar(user).map(resp -> ResponseEntity.ok(resp))
 				.orElse(ResponseEntity.status(HttpStatus.UNAUTHORIZED).build());
