@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 @RequestMapping("/usuarios")
@@ -22,6 +24,7 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 	
+	@ApiOperation(value = "Cadastra um novo usuário")
 	@PostMapping("/cadastrar")
 	public ResponseEntity<Usuario> post(@RequestBody Usuario usuario){
 		Optional<Usuario> user = usuarioService.cadastrarUsuario(usuario);
@@ -33,6 +36,7 @@ public class UsuarioController {
 		}
 	}
 	
+	@ApiOperation(value = "Loga o usuário na plataforma")
 	@PostMapping("/logar")
 	public ResponseEntity<UserLogin> autentication(@RequestBody Optional<UserLogin> user){
 		return usuarioService.logar(user).map(resp -> ResponseEntity.ok(resp))
