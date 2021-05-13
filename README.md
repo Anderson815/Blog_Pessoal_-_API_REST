@@ -13,7 +13,7 @@
 
 <h2 id="Sobre">:computer: Sobre o projeto</h2>
 <p>
-  Blog Pessoal - API REST: Este é um projto back-end voltado para um blog pessoal, com ele você pode desabafar problemas, registrar uma bela conquista e gurardar todos os momentos que você quiser da sua vida em formato de texto. Observação: as postagens não é compartilhada com ninguém apenas fica com você mesmo.
+  Blog Pessoal - API REST: Este é um projto back-end voltado para um blog pessoal, com ele você pode desabafar problemas, registrar uma bela conquista e gurardar todos os momentos que você quiser da sua vida em formato de texto.
 </p>
 
 <p>
@@ -22,12 +22,28 @@
 
 <h2 id="Funcionalidades">⚙️ Funcionalidades</h2>
 
+<h3>Usuário</h3>
+
+  - [x] Cadastrar usuário
+  - [x] Logar
+
+<h3>Postagem:</h3>
+
   - [x] Postar
   - [x] Consultar todas as postagens
   - [x] Consultar postagens com base no título
   - [x] Consultar postagem específica através de um ID
   - [x] Alterar postagem
   - [x] Deletar postagem
+
+<h3>Tema</h3>
+
+  - [x] Criar tema
+  - [x] Consultar todas os temas
+  - [x] Consultar tema por nome parecido
+  - [x] Consultar tema através de um ID
+  - [x] Alterar cadastro de tema
+  - [x] Deletar cadastro de tema
 
 <h2 id="Executar">🚀 Como executar o projeto</h2>
 <!--
@@ -38,15 +54,15 @@
 
 <h2 id="Tecnologias">🛠 Tecnologias</h2>
 
-<a href="https://www.java.com/pt-BR/"><img src="Midias_Readme/ferramentas/Java.png" alt="Java" title="Java"></a>
-<a href="https://start.spring.io/"><img src="Midias_Readme/ferramentas/Spring Boot.png" alt="Spring" title="Spring"></a>
-<a href="https://maven.apache.org/"><img src="Midias_Readme/ferramentas/Maven.png" alt="Maven" title="Maven"></a>
-<a href="https://www.mysql.com/"><img src="Midias_Readme/ferramentas/MySQL.png" alt="MySQL" title="MySQL"></a>
+<a href="https://www.java.com/pt-BR/"><img src="Midias_Readme/ferramentas/Java.png" alt="Java" title="Java" height="62px" width="62px"></a>
+<a href="https://start.spring.io/"><img src="Midias_Readme/ferramentas/Spring Boot.png" alt="Spring" title="Spring" height="62px" width="62px"></a>
+<a href="https://maven.apache.org/"><img src="Midias_Readme/ferramentas/Maven.png" alt="Maven" title="Maven" height="62px" width="62px"></a>
+<a href="https://www.mysql.com/"><img src="Midias_Readme/ferramentas/MySQL.png" alt="MySQL" title="MySQL" height="62px" width="62px"></a>
 
 <p>Utilitários:</p>
-<a href="https://git-scm.com/"><img src="Midias_Readme/ferramentas/Git.png" alt="Git" title="Git"></a>
-<a href="https://github.com/"><img src="Midias_Readme/ferramentas/GitHub.png" alt="GitHub" title="GitHub"></a>
-<a href="https://www.postman.com/"><img src="Midias_Readme/ferramentas/Postman.png" alt="Postman" title="Postman"></a>
+<a href="https://git-scm.com/"><img src="Midias_Readme/ferramentas/Git.png" alt="Git" title="Git" height="62px" width="62px"></a>
+<a href="https://github.com/"><img src="Midias_Readme/ferramentas/GitHub.png" alt="GitHub" title="GitHub" height="62px" width="62px"></a>
+<a href="https://www.postman.com/"><img src="Midias_Readme/ferramentas/Postman.png" alt="Postman" title="Postman" height="62px" width="62px"></a>
 
 
 <h2 id="Autor">🦸 Autor</h2>
@@ -59,4 +75,4 @@ Anderson Correia é um entusiasta e apaixonados por programação, focado em res
 
 <h2 id="Licenca">📝 Licença</h2>
 
-<p>Este projeto esta sobe a licença <a href="https://github.com/Anderson815/Blog_Pessoal_-_API_REST/blob/3a908c332bf467de5839252cde0c9d84eec499f3/LICENSE">MIT</a>.</p>
+<p>Este projeto esta sob a licença <a href="https://github.com/Anderson815/Blog_Pessoal_-_API_REST/blob/3a908c332bf467de5839252cde0c9d84eec499f3/LICENSE">MIT</a>.</p>
