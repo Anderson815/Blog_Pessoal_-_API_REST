@@ -4,11 +4,14 @@ import java.util.Optional;
 
 import org.generation.blogpessoal.model.UserLogin;
 import org.generation.blogpessoal.model.Usuario;
+import org.generation.blogpessoal.repository.UsuarioRepository;
 import org.generation.blogpessoal.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,6 +28,20 @@ public class UsuarioController {
 	
 	@Autowired
 	private UsuarioService usuarioService;
+	
+	@Autowired
+    private UsuarioRepository repository;
+	
+	@ApiOperation(value = "Busca um usuário pelo ID")
+	
+	@GetMapping("/{id}")
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "Esse usuário não existe na plataformaa")
+        })
+    public ResponseEntity<Usuario> GetById(@PathVariable long id) {
+        return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
+    }
 	
 	@ApiOperation(value = "Cadastra um novo usuário")
     @ApiResponses(value = {
