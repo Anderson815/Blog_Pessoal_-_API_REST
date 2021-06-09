@@ -31,6 +31,16 @@ public class UsuarioService {
 		return Optional.of(repository.save(usuario));
 	} 
 	
+	public Usuario atualizarUsuario(Usuario usuario) {
+		
+		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+		
+		String senhaEncoder = encoder.encode(usuario.getSenha());
+		usuario.setSenha(senhaEncoder);
+		
+		return repository.save(usuario);
+	} 
+	
 	public Optional<UserLogin> logar(Optional<UserLogin> user){
 		
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
